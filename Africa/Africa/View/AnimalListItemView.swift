@@ -10,7 +10,7 @@ import SwiftUI
 struct AnimalListItemView: View {
     var animal: Animal
     var body: some View {
-        NavigationLink(destination: AnimalDetailView() , label: {
+        NavigationLink(destination: AnimalDetailView(animal: animal) , label: {
             HStack (spacing: 10){
                 Image(animal.image)
                     .resizable()
