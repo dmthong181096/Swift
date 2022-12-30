@@ -28,11 +28,34 @@ struct AnimalDetailView: View {
                     .foregroundColor(.accentColor)
                 
                 Spacer()
-                HeadingView(headingImage: "photo.on.rectangle.angled", headingText: "Wilderness in Pictures")
-                InsetGalleryView(animal: animal)
-                    .frame(height: 250)
-                HeadingView(headingImage: "questionmark.circle", headingText: "Did you know?")
-                InsetFactView(animal: animal)
+                Group {
+                    HeadingView(headingImage: "photo.on.rectangle.angled", headingText: "Wilderness in Pictures")
+                    InsetGalleryView(animal: animal)
+                        .frame(height: 250)
+                }
+                
+                Group {
+                    HeadingView(headingImage: "questionmark.circle", headingText: "Did you know?")
+                    InsetFactView(animal: animal)
+                }
+                //Descripttion
+                Group {
+                    HeadingView(headingImage: "info.circle", headingText: "All about \(animal.name)")
+                    Text(animal.description).padding(.horizontal,20)
+                        .multilineTextAlignment(.leading)
+                        .layoutPriority(1)
+                }
+                //Description
+                Group{
+                    HeadingView(headingImage: "map", headingText: "Natural park")
+                    InsetMapView()
+                }
+                //Link
+                Group{
+                    HeadingView(headingImage: "books.vertical", headingText: "Learn more")
+                    ExternalWeblinkView(animal: animal)
+                }
+              
                     
             }).navigationBarTitle("Learn about \(animal.name)",displayMode: .inline)
 
