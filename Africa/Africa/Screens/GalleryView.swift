@@ -52,7 +52,7 @@ struct GalleryView: View {
                 Spacer()
             }
         }.frame(maxWidth: .infinity, maxHeight: .infinity)
-//        .background(MotionAnimationView())
+//        .background(MotionAnimationView())    
        
     }
 }
