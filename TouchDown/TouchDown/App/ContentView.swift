@@ -21,6 +21,7 @@ struct ContentView: View {
                         FeaturedTabView()
                             .frame(height: 280)
                         Spacer()
+                        CategoryGridView()
                         FooterView().padding()
                     }
                     
