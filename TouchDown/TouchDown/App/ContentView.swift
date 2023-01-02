@@ -22,10 +22,16 @@ struct ContentView: View {
                             .frame(height: 280)
                         Spacer()
                         CategoryGridView()
+                        TitleView(title: "Helmets")
+                        ProductGridView()
+                        TitleView(title: "Brand")
+                        BrandGridView()
+                            
                         FooterView().padding()
                     }
-                    
+                
                 }
+                
                 
             }.background(
                 Color.gray.opacity(0.5).ignoresSafeArea()
