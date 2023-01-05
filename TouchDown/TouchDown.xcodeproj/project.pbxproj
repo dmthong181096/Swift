@@ -24,6 +24,7 @@
 		A5695D9B29631A7300652736 /* RatingsSizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5695D9A29631A7300652736 /* RatingsSizeView.swift */; };
 		A5695D9D29631EA700652736 /* QuantityFavouritesDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5695D9C29631EA700652736 /* QuantityFavouritesDetailView.swift */; };
 		A5695D9F296321AF00652736 /* AddToCartDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5695D9E296321AF00652736 /* AddToCartDetailView.swift */; };
+		CD6C1AF52964326000E1D3E7 /* Shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6C1AF42964326000E1D3E7 /* Shop.swift */; };
 		CDE238042961AD2600050A03 /* TouchDownApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE238032961AD2600050A03 /* TouchDownApp.swift */; };
 		CDE238062961AD2600050A03 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE238052961AD2600050A03 /* ContentView.swift */; };
 		CDE238082961AD2800050A03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CDE238072961AD2800050A03 /* Assets.xcassets */; };
@@ -60,6 +61,7 @@
 		A5695D9A29631A7300652736 /* RatingsSizeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RatingsSizeView.swift; path = TouchDown/utility/RatingsSizeView.swift; sourceTree = SOURCE_ROOT; };
 		A5695D9C29631EA700652736 /* QuantityFavouritesDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QuantityFavouritesDetailView.swift; path = TouchDown/utility/QuantityFavouritesDetailView.swift; sourceTree = SOURCE_ROOT; };
 		A5695D9E296321AF00652736 /* AddToCartDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddToCartDetailView.swift; path = TouchDown/utility/AddToCartDetailView.swift; sourceTree = SOURCE_ROOT; };
+		CD6C1AF42964326000E1D3E7 /* Shop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shop.swift; sourceTree = "<group>"; };
 		CDE238002961AD2600050A03 /* TouchDown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TouchDown.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDE238032961AD2600050A03 /* TouchDownApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchDownApp.swift; sourceTree = "<group>"; };
 		CDE238052961AD2600050A03 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 			children = (
 				CDE238212961B4EA00050A03 /* Contants.swift */,
 				A5695D982963154900652736 /* CustomShape.swift */,
+				CD6C1AF42964326000E1D3E7 /* Shop.swift */,
 			);
 			path = utility;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				A5695D9F296321AF00652736 /* AddToCartDetailView.swift in Sources */,
 				A5695D932963012700652736 /* BrandGridView.swift in Sources */,
 				A5695D992963154900652736 /* CustomShape.swift in Sources */,
+				CD6C1AF52964326000E1D3E7 /* Shop.swift in Sources */,
 				CDE238042961AD2600050A03 /* TouchDownApp.swift in Sources */,
 				A56751E92961D66E00D400FC /* CategoryGridView.swift in Sources */,
 				A5695D97296306B300652736 /* NavigationBarDetailView.swift in Sources */,

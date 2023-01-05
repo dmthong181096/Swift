@@ -8,17 +8,18 @@
 import SwiftUI
 
 struct ProductDetailView: View {
+    @EnvironmentObject var shop: Shop
     var product: Product = products[0]
     @State private var isAnimated: Bool = false
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
-            NavigationBarDetailView()
+            NavigationBarDetailView().padding(.top,40)
             Text("Protective Gear")
                 .font(.title2)
                 .foregroundColor(.white)
                 .fontWeight(.medium)
                 .padding(.horizontal)
-            Text(product.name)
+            Text(shop.selectedProduct?.name ?? product.name)
                 .font(.largeTitle)
                 .fontWeight(.heavy)
                 .foregroundColor(.white)
@@ -29,13 +30,13 @@ struct ProductDetailView: View {
                     Text("Price")
                         .font(.title2)
                         .fontWeight(.bold)
-                    Text(product.formattedPrice)
+                    Text(shop.selectedProduct?.formattedPrice ?? product.formattedPrice)
                         .font(.system(size: 50))
                         .fontWeight(.heavy)
                     
                 }.padding(.top,30)
                 Spacer()
-                Image(product.image)
+                Image(shop.selectedProduct?.image ?? product.image)
                     .resizable()
                     .scaledToFit()
             }.padding(.horizontal)
@@ -52,7 +53,7 @@ struct ProductDetailView: View {
                     .padding(.bottom,10)
             //DESCRIPION
                 ScrollView {
-                    Text(product.description)
+                    Text(shop.selectedProduct?.description ?? product.description)
                         .font(.system(.body, design: .rounded))
                         .foregroundColor(.gray)
                         .multilineTextAlignment(.leading)
@@ -81,7 +82,7 @@ struct ProductDetailView: View {
             Spacer()
         }.ignoresSafeArea(.all, edges: .bottom)
         .background(
-            product.productColor
+            shop.selectedProduct?.productColor ?? product.productColor
         ).onAppear {
             withAnimation(.easeOut(duration: 1)){
                 isAnimated = true
@@ -93,6 +94,5 @@ struct ProductDetailView: View {
 
 struct ProductDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ProductDetailView()
-    }
+        ProductDetailView().environmentObject(Shop())    }
 }

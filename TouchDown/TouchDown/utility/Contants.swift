@@ -27,4 +27,6 @@ var gridLayout: [GridItem] {
 let logoLineal: String = "logo-lineal"
 let logoDark: String = "logo-dark"
 let imageMagnifyingglass: String = "magnifyingglass"
-//MISC  
+//MISC
+
+
