@@ -57,7 +57,7 @@ struct ContentView: View {
                     }.padding()
                         .foregroundColor(.white)
                         .font(.title)
-                    
+                    Spacer()
                     //NEW ITEM BUTTON
                     Button {
                         showNewTaskItem.toggle()
@@ -75,15 +75,7 @@ struct ContentView: View {
                             .shadow(radius: 24)
                         
                     }
-                    
-                    
-
-
-
-
-
-
-//                    Spacer(minLength: 100)
+                    Spacer(minLength: 100)
                     if (items.isEmpty == false){
                         List {
                             
@@ -91,13 +83,7 @@ struct ContentView: View {
                                     NavigationLink {
                                         Text("Item at \(item.timestamp!, formatter: itemFormatter)")
                                     } label: {
-                                        VStack(alignment: .leading, spacing: 10) {
-                                            Text(item.task ?? "")
-                                                .font(.headline)
-                                                .fontWeight(.heavy)
-                                            Text(item.timestamp!, formatter: itemFormatter)
-                                                .font(.footnote)
-                                        }
+                                        ListItemView(item: item)
                                     }
                                 } .onDelete(perform: deleteItems)
                                 .shadow(radius: 12)
@@ -121,9 +107,9 @@ struct ContentView: View {
                 }
             }
           
-            .navigationBarTitle(
-                Text("Devote").font(.largeTitle)
-                ,displayMode: .large)
+//            .navigationBarTitle(
+//                Text("Devote").font(.largeTitle)
+//                ,displayMode: .large)
             .navigationBarHidden(true)
            
            .background(
