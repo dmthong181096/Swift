@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A547D78129697F42004CA94C /* NewTaskItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A547D78029697F42004CA94C /* NewTaskItemView.swift */; };
+		A547D783296986B1004CA94C /* BlankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A547D782296986B1004CA94C /* BlankView.swift */; };
 		CD2B247F2966D60F0053489C /* HideKeyboardExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2B247E2966D60F0053489C /* HideKeyboardExtention.swift */; };
 		CD65412C296564CD00529E9E /* DevoteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD65412B296564CD00529E9E /* DevoteApp.swift */; };
 		CD65412E296564CD00529E9E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD65412D296564CD00529E9E /* ContentView.swift */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A547D78029697F42004CA94C /* NewTaskItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskItemView.swift; sourceTree = "<group>"; };
+		A547D782296986B1004CA94C /* BlankView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlankView.swift; sourceTree = "<group>"; };
 		CD2B247E2966D60F0053489C /* HideKeyboardExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideKeyboardExtention.swift; sourceTree = "<group>"; };
 		CD654128296564CD00529E9E /* Devote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Devote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD65412B296564CD00529E9E /* DevoteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevoteApp.swift; sourceTree = "<group>"; };
@@ -105,6 +109,8 @@
 			isa = PBXGroup;
 			children = (
 				CDAE5D13296833CA00F2043C /* BackgroundImageView.swift */,
+				A547D78029697F42004CA94C /* NewTaskItemView.swift */,
+				A547D782296986B1004CA94C /* BlankView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -226,9 +232,11 @@
 				CDAE5D14296833CA00F2043C /* BackgroundImageView.swift in Sources */,
 				CD65412E296564CD00529E9E /* ContentView.swift in Sources */,
 				CD654138296564CF00529E9E /* Devote.xcdatamodeld in Sources */,
+				A547D783296986B1004CA94C /* BlankView.swift in Sources */,
 				CD65412C296564CD00529E9E /* DevoteApp.swift in Sources */,
 				CD2B247F2966D60F0053489C /* HideKeyboardExtention.swift in Sources */,
 				CD7366922966F89A00D1DB03 /* Contants.swift in Sources */,
+				A547D78129697F42004CA94C /* NewTaskItemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,6 +373,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -394,6 +403,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

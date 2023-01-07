@@ -14,6 +14,7 @@ struct ContentView: View {
     private var isDisableButtonSave : Bool  {
         task.isEmpty
     }
+    @State private var showNewTaskItem: Bool    = false
 
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
@@ -27,40 +28,32 @@ struct ContentView: View {
             ZStack {
                 Color.clear
                 VStack(alignment: .center, spacing: 10) {
-                  
-
-                        TextField("New Item", text: $task)
+                    
+                    Button {
+                        showNewTaskItem.toggle()
+                    } label: {
+                        HStack {
+                            Image(systemName: "plus.circle")
+                            Text("New Item")
+                        }
+                            .font(.system(size: 24, weight: .bold, design: .rounded))
+                            .foregroundColor(.white)
                             .padding()
                             .background(
-                                Color(UIColor.systemGray6)
+                                LinearGradient(gradient: Gradient(colors: [Color.pink, Color.blue]), startPoint: .leading, endPoint: .trailing).clipShape(Capsule())
                             )
-                            .cornerRadius(10)
-                            .padding(.horizontal)
-                        Button {
-                            addItem()
-                            hideKeyboard()
-                        } label: {
-                            Spacer()
-                            Text("Save")
-                                .font(.title3)
-                                .foregroundColor(.white)
-                                .fontWeight(.heavy)
-                            Spacer()
-                        }.padding()
-                        .background(
-                            isDisableButtonSave  ? Color.gray :  Color(UIColor.systemPink)
-                        )
-                        .cornerRadius(10)
-                        .disabled(isDisableButtonSave)
-                        .padding(.horizontal)
-
-
-
-
-
-
- 
+                            .shadow(radius: 24)
                         
+                    }
+                    
+                    
+
+
+
+
+
+
+//                    Spacer(minLength: 100)
                     if (items.isEmpty == false){
                         List {
                             
@@ -81,8 +74,20 @@ struct ContentView: View {
                             } .scrollContentBackground(.hidden)
                     }
                    
+              
                    
                   
+                }
+                if showNewTaskItem {
+                    
+                    BlankView().onTapGesture {
+                        withAnimation(.easeIn(duration: 0.25)){
+                            showNewTaskItem = false
+                        }
+                    }
+                    NewTaskItemView(isShowing: $showNewTaskItem)
+                    
+                   
                 }
             }
             .navigationBarTitle("New Item",displayMode: .large)
@@ -106,25 +111,6 @@ struct ContentView: View {
             
     }
 
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
-            newItem.task = task
-            newItem.completed = false
-            newItem.id = UUID()
-
-            do {
-                try viewContext.save()
-                task = ""
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
-    }
 
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
