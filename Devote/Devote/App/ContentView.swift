@@ -16,6 +16,7 @@ struct ContentView: View {
     }
     @State private var showNewTaskItem: Bool    = false
 
+    @AppStorage("isDarkMode") var isDarkMode: Bool = false
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
         animation: .default)
@@ -29,6 +30,35 @@ struct ContentView: View {
                 Color.clear
                 VStack(alignment: .center, spacing: 10) {
                     
+                    //MARK: HEADER
+                    HStack {
+                        //TITLE
+                        Text("Devote")
+                            .fontWeight(.heavy)
+                            .font(.system(size: 50, design: .rounded))
+                        Spacer()
+                        //EDIT BUTTON
+                        EditButton()
+                            .padding(.horizontal,20)
+                            .background(
+                                Capsule().stroke(Color.white, lineWidth: 2)
+                            )
+                        
+
+                        // APPEARCE BUTTON
+                        Button {
+                            withAnimation(.easeOut(duration: 0.5)){
+                                isDarkMode.toggle()
+                            }
+                        } label: {
+                            Image(systemName: isDarkMode ? "moon.circle.fill" : "moon.circle")
+                        }
+
+                    }.padding()
+                        .foregroundColor(.white)
+                        .font(.title)
+                    
+                    //NEW ITEM BUTTON
                     Button {
                         showNewTaskItem.toggle()
                     } label: {
@@ -90,18 +120,13 @@ struct ContentView: View {
                    
                 }
             }
-            .navigationBarTitle("New Item",displayMode: .large)
-            .toolbar {
-                #if os(IOS)
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }.foregroundColor(.red)
-                        .font(.largeTitle)
-                }
-                #endif
-
-            }.background(
+          
+            .navigationBarTitle(
+                Text("Devote").font(.largeTitle)
+                ,displayMode: .large)
+            .navigationBarHidden(true)
+           
+           .background(
                 BackgroundImageView()
             )
             .background(

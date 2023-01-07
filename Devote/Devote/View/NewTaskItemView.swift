@@ -56,7 +56,7 @@ struct NewTaskItemView: View {
             }
             .padding(30)
             .background(
-                Color.white.ignoresSafeArea()
+                
             )
             .cornerRadius(24)
             .padding(.horizontal,15)
