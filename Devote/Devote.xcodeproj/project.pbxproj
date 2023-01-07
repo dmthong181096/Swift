@@ -17,6 +17,8 @@
 		CD6541422965664100529E9E /* sound-rise.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CD65413F2965664100529E9E /* sound-rise.mp3 */; };
 		CD6541432965664100529E9E /* sound-ding.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CD6541402965664100529E9E /* sound-ding.mp3 */; };
 		CD6541442965664100529E9E /* sound-tap.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CD6541412965664100529E9E /* sound-tap.mp3 */; };
+		CD7366922966F89A00D1DB03 /* Contants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7366912966F89A00D1DB03 /* Contants.swift */; };
+		CDAE5D14296833CA00F2043C /* BackgroundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAE5D13296833CA00F2043C /* BackgroundImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		CD6541402965664100529E9E /* sound-ding.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "sound-ding.mp3"; sourceTree = "<group>"; };
 		CD6541412965664100529E9E /* sound-tap.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "sound-tap.mp3"; sourceTree = "<group>"; };
 		CD65414C2965681200529E9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		CD7366912966F89A00D1DB03 /* Contants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contants.swift; sourceTree = "<group>"; };
+		CDAE5D13296833CA00F2043C /* BackgroundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,7 @@
 		CD6541452965664500529E9E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CDAE5D13296833CA00F2043C /* BackgroundImageView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -131,6 +136,7 @@
 		CD6541492965665E00529E9E /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				CD7366912966F89A00D1DB03 /* Contants.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -217,10 +223,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD654135296564CF00529E9E /* Persistence.swift in Sources */,
+				CDAE5D14296833CA00F2043C /* BackgroundImageView.swift in Sources */,
 				CD65412E296564CD00529E9E /* ContentView.swift in Sources */,
 				CD654138296564CF00529E9E /* Devote.xcdatamodeld in Sources */,
 				CD65412C296564CD00529E9E /* DevoteApp.swift in Sources */,
 				CD2B247F2966D60F0053489C /* HideKeyboardExtention.swift in Sources */,
+				CD7366922966F89A00D1DB03 /* Contants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

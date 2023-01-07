@@ -22,63 +22,88 @@ struct ContentView: View {
 
     var body: some View {
         NavigationView {
-            VStack {
+           
+            
+            ZStack {
+                Color.clear
                 VStack(alignment: .center, spacing: 10) {
-                    TextField("New Item", text: $task)
-                        .padding()
+                  
+
+                        TextField("New Item", text: $task)
+                            .padding()
+                            .background(
+                                Color(UIColor.systemGray6)
+                            )
+                            .cornerRadius(10)
+                            .padding(.horizontal)
+                        Button {
+                            addItem()
+                            hideKeyboard()
+                        } label: {
+                            Spacer()
+                            Text("Save")
+                                .font(.title3)
+                                .foregroundColor(.white)
+                                .fontWeight(.heavy)
+                            Spacer()
+                        }.padding()
                         .background(
-                            Color(UIColor.systemGray6)
+                            isDisableButtonSave  ? Color.gray :  Color(UIColor.systemPink)
                         )
                         .cornerRadius(10)
-                    Button {
-                        addItem()
-                        hideKeyboard()
-                    } label: {
-                        Spacer()
-                        Text("Save")
-                            .font(.title3)
-                            .foregroundColor(.white)
-                            .fontWeight(.heavy)
-                        Spacer()
-                    }.padding()
-                    .background(
-//                        task != "" ? Color(UIColor.systemPink) : Color.gray
-                        isDisableButtonSave  ? Color.gray :  Color(UIColor.systemPink) 
-                    )
-                    .cornerRadius(10)
-                    .disabled(isDisableButtonSave)
+                        .disabled(isDisableButtonSave)
+                        .padding(.horizontal)
 
-                }.padding(.horizontal)
-                
-                
-                
-                List {
-                    ForEach(items) { item in
-                        NavigationLink {
-                            Text("Item at \(item.timestamp!, formatter: itemFormatter)")
-                        } label: {
-                            VStack(alignment: .leading, spacing: 10) {
-                                Text(item.task ?? "")
-                                Text(item.timestamp!, formatter: itemFormatter)
-                            }
-                        }
+
+
+
+
+
+ 
+                        
+                    if (items.isEmpty == false){
+                        List {
+                            
+                                ForEach(items) { item in
+                                    NavigationLink {
+                                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
+                                    } label: {
+                                        VStack(alignment: .leading, spacing: 10) {
+                                            Text(item.task ?? "")
+                                                .font(.headline)
+                                                .fontWeight(.heavy)
+                                            Text(item.timestamp!, formatter: itemFormatter)
+                                                .font(.footnote)
+                                        }
+                                    }
+                                } .onDelete(perform: deleteItems)
+                                .shadow(radius: 12)
+                            } .scrollContentBackground(.hidden)
                     }
-                    .onDelete(perform: deleteItems)
+                   
+                   
+                  
                 }
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        EditButton()
-                    }
-                    ToolbarItem {
-                        Button(action: addItem) {
-                            Label("Add Item", systemImage: "plus")
-                        }
-                    }
             }
-                .navigationBarTitle("New Item")
-            }
-            Text("Select an item")
-        }
+            .navigationBarTitle("New Item",displayMode: .large)
+            .toolbar {
+                #if os(IOS)
+                ToolbarItem {
+                    Button(action: addItem) {
+                        Label("Add Item", systemImage: "plus")
+                    }.foregroundColor(.red)
+                        .font(.largeTitle)
+                }
+                #endif
+
+            }.background(
+                BackgroundImageView()
+            )
+            .background(
+                backgroundGradient.ignoresSafeArea(.all)
+            )
+        }.navigationViewStyle(StackNavigationViewStyle())
+            
     }
 
     private func addItem() {
