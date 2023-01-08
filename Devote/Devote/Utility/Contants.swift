@@ -12,3 +12,9 @@ import SwiftUI
 var backgroundGradient: LinearGradient {
     return LinearGradient(gradient: Gradient(colors: [Color.pink,Color.blue]), startPoint: .leading, endPoint: .trailing)
 }
+//SOUND
+var soundDing: String = "sound-ding"
+var soundRise: String = "sound-rise"
+var soundTap: String = "sound-tap"
+//ring feedback
+var feedback = UINotificationFeedbackGenerator()

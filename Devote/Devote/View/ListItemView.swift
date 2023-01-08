@@ -22,6 +22,9 @@ struct ListItemView: View {
 
             if self.viewContext.hasChanges {
                 try? self.viewContext.save()
+                playSound(sound: item.completed ? soundRise : soundTap, type: "mp3")
+//                feedback.notificationOccurred(item .success)
+               
             }
         }.toggleStyle(CheckBoxStyle())
             .padding(.vertical,10)

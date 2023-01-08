@@ -35,6 +35,8 @@ struct NewTaskItemView: View {
                     
                 Button {
                     addItem()
+                    playSound(sound: soundDing, type: "mp3")
+                    feedback.notificationOccurred(.success)
                     hideKeyboard()
                 } label: {
                     Spacer()
@@ -47,11 +49,17 @@ struct NewTaskItemView: View {
                     
                     Spacer()
                 }.padding()
+            
                 .background(
                     isDisableButtonSave  ? Color.blue :  Color(UIColor.systemPink)
                 )
                 .cornerRadius(10)
                 .disabled(isDisableButtonSave)
+                .onTapGesture {
+                    if isDisableButtonSave {
+                        playSound(sound: soundTap, type: "mp3")
+                    }
+                }
                 
             }
             .padding(30)

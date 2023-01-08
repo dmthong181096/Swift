@@ -49,6 +49,7 @@ struct ContentView: View {
                         Button {
                             withAnimation(.easeOut(duration: 0.5)){
                                 isDarkMode.toggle()
+                                playSound(sound: soundTap, type: "mp3")
                             }
                         } label: {
                             Image(systemName: isDarkMode ? "moon.circle.fill" : "moon.circle")
@@ -61,6 +62,7 @@ struct ContentView: View {
                     //NEW ITEM BUTTON
                     Button {
                         showNewTaskItem.toggle()
+                        playSound(sound: soundDing, type: "mp3")
                     } label: {
                         HStack {
                             Image(systemName: "plus.circle")
@@ -73,6 +75,7 @@ struct ContentView: View {
                                 LinearGradient(gradient: Gradient(colors: [Color.pink, Color.blue]), startPoint: .leading, endPoint: .trailing).clipShape(Capsule())
                             )
                             .shadow(radius: 24)
+                            
                         
                     }
                     Spacer(minLength: 100)
@@ -93,7 +96,7 @@ struct ContentView: View {
               
                    
                   
-                }
+                }.blur(radius: showNewTaskItem ? 5 : 0)
                 if showNewTaskItem {
                     
                     BlankView().onTapGesture {
@@ -106,6 +109,7 @@ struct ContentView: View {
                    
                 }
             }
+           
           
 //            .navigationBarTitle(
 //                Text("Devote").font(.largeTitle)
@@ -113,7 +117,7 @@ struct ContentView: View {
             .navigationBarHidden(true)
            
            .background(
-                BackgroundImageView()
+                BackgroundImageView().blur(radius: showNewTaskItem ? 5 : 0)
             )
             .background(
                 backgroundGradient.ignoresSafeArea(.all)
