@@ -23,13 +23,18 @@ struct ButtonAddNewItemView: View {
                     } label: {
                         ZStack {
                             Capsule()
-                                .stroke(Color.gray , lineWidth: 5)
+                                .stroke(LinearGradient(colors: [Color.blue,Color.pink], startPoint: .leading, endPoint: .trailing), lineWidth: 5)
                                 .frame(width: 80,height: 80)
-                                .opacity(isAnimating ? 0.5 : 0)
+                                .opacity(isAnimating ? 0.1 : 1)
                                 .scaleEffect(isAnimating ? 1 : 0.5)
                                 .animation(.linear(duration: 1).repeatForever(autoreverses: false), value: isAnimating)
-                            Image(systemName: "plus.circle")
-                                .font(.system(size: 50, design: .rounded))
+                            Image(systemName: "plus.circle.fill")
+                                .foregroundColor(.blue)
+//                                .font(.system(size: 50, design: .rounded))
+//                                .background(
+//                                    Color.blue.clipShape(Capsule())
+//                                )
+                                .scaleEffect(3)
                         }
                     }
                 }

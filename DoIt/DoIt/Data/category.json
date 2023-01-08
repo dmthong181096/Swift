@@ -1,0 +1,87 @@
+[
+  {
+    "id" : 1,
+    "name" : "All",
+    "image" : "task_all"
+    
+  },
+  {
+    "id" : 2,
+    "name" : "Work",
+    "image" : "task_work"
+    
+  },
+  {
+    "id" : 3,
+    "name" : "Music",
+    "image" : "task_music"
+
+  },
+  {
+    "id" : 4,
+    "name" : "Travel",
+    "image" : "task_travel"
+  },
+  {
+    "id" : 5,
+    "name" : "Study",
+    "image" : "task_study"
+    
+  },
+  {
+    "id" : 6,
+    "name" : "Home",
+    "image" : "task_home"
+
+  },
+  {
+    "id" : 7,
+    "name" : "Shoping",
+    "image" : "task_shopping"
+
+  },
+  {
+    "id" : 8,
+    "name" : "Gift",
+    "image" : "task_gift"
+
+  },
+  {
+    "id" : 9,
+    "name" : "Ideas",
+    "image" : "task_ideas"
+
+  },
+  {
+    "id" : 10,
+    "name" : "Payment",
+    "image" : "task_payment"
+
+  },
+  {
+    "id" : 11,
+    "name" : "Cooking",
+    "image" : "task_cooking"
+
+  },
+  {
+    "id" : 12,
+    "name" : "Health",
+    "image" : "task_health"
+
+  },
+  {
+    "id" : 13,
+    "name" : "Finance",
+    "image" : "task_finance"
+
+  },
+  {
+    "id" : 14,
+    "name" : "Others",
+    "image" : "task_others"
+
+  },
+  
+  
+]

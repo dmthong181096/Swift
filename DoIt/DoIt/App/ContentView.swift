@@ -35,22 +35,23 @@ struct ContentView: View {
                     .onDelete(perform: deleteItems)
                 }
                 .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        EditButton()
-                    }
-                    ToolbarItem {
-                        Button(action: addItem) {
-                            Label("Add Item", systemImage: "plus")
-                        }
-                    }
+//                    ToolbarItem(placement: .navigationBarTrailing) {
+//                        EditButton()
+//                    }
+//                    ToolbarItem {
+//                        Button(action: addItem) {
+//                            Label("Add Item", systemImage: "plus")
+//                        }
+//                    }
                 }
                 ButtonAddNewItemView(isClicked: $showNewTaskView)
                 
             }.sheet(isPresented: $showNewTaskView) {
                 
             } content: {
-                Text("Sheet")
+                NewTaskItem()
             }
+            .navigationTitle("Do it")
 
             
         }
