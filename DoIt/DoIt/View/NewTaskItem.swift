@@ -11,7 +11,7 @@ struct NewTaskItem: View {
     @State var task: String = ""
     @State var time: String = ""
     
-    @State var category: String = ""
+    @State var category: String = categories[0].name
     @State private var date = Date()
     var girdLayout: [GridItem] = [
         GridItem(),
@@ -22,10 +22,11 @@ struct NewTaskItem: View {
     var body: some View {
         NavigationView{
             
-        
+            
             VStack( alignment: .center,spacing: 0) {
-                
+               
                 Form {
+                    
                     Text("What are you planning?")
                         .font(.system(.callout))
                         .foregroundColor(.secondary)
@@ -56,24 +57,40 @@ struct NewTaskItem: View {
                         }.disabled(true)
                         
                     }
+                    LazyVGrid(columns: girdLayout, spacing: 20, content: {
+                        ForEach(categories) { category in
+                            CategoryItemGirdView(category: category)
+                                .onTapGesture {
+                                self.category = category.name
+                                withAnimation(.easeOut(duration: 1)){
+                                    pressed = true
+                                }
+
+                                }
+                            
+                        }
+                    })
                     
   
-                }.padding(.top,-10)
-                        Form {
-                            LazyVGrid(columns: girdLayout, spacing: 20, content: {
-                                ForEach(categories) { category in
-                                    CategoryItemGirdView(category: category)
-                                        .onTapGesture {
-                                        self.category = category.name
-                                        withAnimation(.easeOut(duration: 1)){
-                                            pressed = true
-                                        }
-
-                                        }
-                                    
-                                }
-                            })
-                        }
+                }
+//                .padding(.top,-10)
+                    .scrollIndicators(ScrollIndicatorVisibility.hidden)
+//                    Form {
+                        
+//                        LazyVGrid(columns: girdLayout, spacing: 20, content: {
+//                            ForEach(categories) { category in
+//                                CategoryItemGirdView(category: category)
+//                                    .onTapGesture {
+//                                    self.category = category.name
+//                                    withAnimation(.easeOut(duration: 1)){
+//                                        pressed = true
+//                                    }
+//
+//                                    }
+//
+//                            }
+//                        })
+//                    } .scrollIndicators(ScrollIndicatorVisibility.hidden)
                         
                     
                 Button {
@@ -109,8 +126,8 @@ struct NewTaskItem: View {
                 
          
                 
-            }.scrollDisabled(true)
-                .navigationBarTitle(Text("New task"))
+            }
+//                .navigationBarTitle(Text("New task"))
                 
                 .navigationBarTitleDisplayMode(.inline)
         }
@@ -121,6 +138,6 @@ struct NewTaskItem: View {
 struct NewTaskItem_Previews: PreviewProvider {
     static var previews: some View {
         NewTaskItem()
-            .preferredColorScheme(.dark)
+//            .preferredColorScheme(.dark)
     }
 }
